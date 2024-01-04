@@ -6275,17 +6275,3 @@ spec:
         runAsUser: 2000
         seccompProfile:
           type: RuntimeDefault
-
-apiVersion: monitoring.coreos.com/v1alpha1
-kind: ScrapeConfig
-metadata:
-  name: scrape-config-for-pushgateway
-  namespace: monitoring
-  labels:
-    release: stable
-spec:
-  staticConfigs:
-    - labels:
-        job: scrape-config-for-pushgateway
-      targets:
-        - stable-prometheus-pushgateway.monitoring.svc.cluster.local:9091
