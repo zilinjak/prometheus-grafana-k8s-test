@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/version: "v1.6.2"
     app.kubernetes.io/managed-by: Helm
   name: stable-prometheus-pushgateway
-  namespace: prometheus
+  namespace: monitoring
 ---
 # Source: prometheus-pushgateway/templates/service.yaml
 apiVersion: v1
@@ -23,9 +23,9 @@ metadata:
     app.kubernetes.io/version: "v1.6.2"
     app.kubernetes.io/managed-by: Helm
   name: stable-prometheus-pushgateway
-  namespace: prometheus
+  namespace: monitoring
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 9091
       targetPort: 9091
@@ -46,7 +46,7 @@ metadata:
     app.kubernetes.io/version: "v1.6.2"
     app.kubernetes.io/managed-by: Helm
   name: stable-prometheus-pushgateway
-  namespace: prometheus
+  namespace: monitoring
 spec:
   replicas: 1
   strategy:
