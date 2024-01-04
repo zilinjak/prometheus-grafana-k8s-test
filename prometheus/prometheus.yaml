@@ -1322,7 +1322,7 @@ metadata:
     app.kubernetes.io/version: "10.2.2"
     app.kubernetes.io/managed-by: Helm
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - name: http-web
       port: 80
@@ -1597,7 +1597,6 @@ metadata:
   labels:
     app: kube-prometheus-stack-prometheus
     self-monitor: "true"
-    
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: stable
     app.kubernetes.io/version: "55.5.1"
@@ -1619,7 +1618,7 @@ spec:
     app.kubernetes.io/name: prometheus
     operator.prometheus.io/name: stable-kube-prometheus-sta-prometheus
   sessionAffinity: None
-  type: "ClusterIP"
+  type: "LoadBalancer"
 ---
 # Source: kube-prometheus-stack/charts/prometheus-node-exporter/templates/daemonset.yaml
 apiVersion: apps/v1
