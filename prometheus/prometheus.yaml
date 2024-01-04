@@ -1607,12 +1607,12 @@ metadata:
 spec:
   ports:
   - name: http-web
-    port: 9090
+    port: 7001
     targetPort: 9090
-  - name: reloader-web
-    appProtocol: http
-    port: 8080
-    targetPort: reloader-web
+  # - name: reloader-web
+    # appProtocol: http
+    # port: 8080
+    # targetPort: reloader-web
   publishNotReadyAddresses: false
   selector:
     app.kubernetes.io/name: prometheus
