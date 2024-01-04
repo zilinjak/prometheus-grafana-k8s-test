@@ -6287,6 +6287,6 @@ metadata:
 spec:
   staticConfigs:
     - labels:
-        job: ScrapeConfigForPushgateway
+        job: scrape-config-for-pushgateway
       targets:
         - stable-prometheus-pushgateway.monitoring.svc.cluster.local:9091
