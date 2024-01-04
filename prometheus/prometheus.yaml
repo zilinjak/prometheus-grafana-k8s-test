@@ -1322,10 +1322,10 @@ metadata:
     app.kubernetes.io/version: "10.2.2"
     app.kubernetes.io/managed-by: Helm
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-    - name: http-web
-      port: 30007
+    - name: grafana-http-web
+      port: 7002
       protocol: TCP
       targetPort: 3000
   selector:
@@ -1609,10 +1609,6 @@ spec:
   - name: http-web
     port: 7001
     targetPort: 9090
-  # - name: reloader-web
-    # appProtocol: http
-    # port: 8080
-    # targetPort: reloader-web
   publishNotReadyAddresses: false
   selector:
     app.kubernetes.io/name: prometheus
