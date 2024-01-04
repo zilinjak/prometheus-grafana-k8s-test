@@ -2248,7 +2248,6 @@ spec:
   scrapeConfigSelector:
     matchLabels:
       release: "stable"
-    prometheus: system-monitoring-prometheus
 
   scrapeConfigNamespaceSelector: {}
   portName: http-web
@@ -6283,7 +6282,7 @@ metadata:
   name: scrape-config-for-pushgateway
   namespace: monitoring
   labels:
-    prometheus: system-monitoring-prometheus
+    release: stable
 spec:
   staticConfigs:
     - labels:
