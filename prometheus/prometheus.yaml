@@ -2248,6 +2248,7 @@ spec:
   scrapeConfigSelector:
     matchLabels:
       release: "stable"
+    prometheus: system-monitoring-prometheus
 
   scrapeConfigNamespaceSelector: {}
   portName: http-web
@@ -6279,13 +6280,13 @@ spec:
 apiVersion: monitoring.coreos.com/v1alpha1
 kind: ScrapeConfig
 metadata:
-  name: static-config
+  name: ScrapeConfigForPushgateway
   namespace: monitoring
   labels:
     prometheus: system-monitoring-prometheus
 spec:
   staticConfigs:
     - labels:
-        job: prometheus
+        job: ScrapeConfigForPushgateway
       targets:
         - stable-prometheus-pushgateway.monitoring.svc.cluster.local:9091
