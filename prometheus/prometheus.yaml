@@ -1322,7 +1322,7 @@ metadata:
     app.kubernetes.io/version: "10.2.2"
     app.kubernetes.io/managed-by: Helm
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: http-web
       port: 80
